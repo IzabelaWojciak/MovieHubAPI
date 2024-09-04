@@ -11,11 +11,11 @@ public class Cinema(
     [Key]
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     [Column("id")]
-    public int Id { get; set; }
+    public int Id { get; init; }
 
     [Required] [MaxLength(64)] [Column("name")]
-    public string Name { get; set; } = name;
+    public string Name { get; init; } = name;
 
     [Required] [MaxLength(64)] [Column("location")]
-    public string Location { get; set; } = location;
+    public string Location { get; init; } = location;
 }

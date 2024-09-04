@@ -6,22 +6,26 @@ namespace MovieHubClientMockChallenge.Entities;
 
 [Table("MovieCinema")]
 public class MovieCinema(
-    int movieId,
-    int cinemaId,
     DateTime showTime,
-    decimal ticketPrice
+    decimal ticketPrice,
+    int movieId,
+    int cinemaId
     )
 {
     [Key]
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     [Column("id")]
-    public int Id { get; set; }
+    public int Id { get; init; }
 
-    [ForeignKey("movie")] public int MovieId { get; set; } = movieId;
+    [ForeignKey("movieId")] public Movie? Movie { get; init; }
+    
+    public int MovieId { get; init; } = movieId;
 
-    [ForeignKey("cinema")] public int CinemaId { get; set; } = cinemaId;
+    [ForeignKey("cinemaId")] public Cinema? Cinema { get; init; }
+    
+    public int CinemaId { get; init; } = cinemaId;
 
-    [Required] public DateTime ShowTime { get; set; } = showTime;
+    [Required] [Column("showTime")] public DateTime ShowTime { get; init; } = showTime;
 
-    [Required] [Precision(4, 2)] public decimal TicketPrice { get; set; } = ticketPrice;
+    [Required] [Precision(4, 2)] [Column("ticketPrice")] public decimal TicketPrice { get; init; } = ticketPrice;
 }

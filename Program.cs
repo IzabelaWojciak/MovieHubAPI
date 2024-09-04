@@ -8,13 +8,19 @@ using MovieHubClientMockChallenge.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddControllers();
+builder.Services.AddControllers(options =>
+{
+    options.ReturnHttpNotAcceptable = true;
+}).AddXmlDataContractSerializerFormatters();
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<MovieHubContext>(options => options.UseSqlite("Name=MovieHubConnectionString"));
 
 builder.Services.AddScoped<IMovieRepository, MovieRepository>();
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+builder.Services.AddScoped<MovieService>();
 
 var app = builder.Build();
 

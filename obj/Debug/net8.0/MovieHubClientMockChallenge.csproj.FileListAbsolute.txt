@@ -118,3 +118,6 @@
 /Users/izabelawojciak/BenchProjects/dotnet/MovieHubClient/MovieHubClientMockChallenge/bin/Debug/net8.0/Swashbuckle.AspNetCore.Swagger.dll
 /Users/izabelawojciak/BenchProjects/dotnet/MovieHubClient/MovieHubClientMockChallenge/bin/Debug/net8.0/Swashbuckle.AspNetCore.SwaggerGen.dll
 /Users/izabelawojciak/BenchProjects/dotnet/MovieHubClient/MovieHubClientMockChallenge/bin/Debug/net8.0/Swashbuckle.AspNetCore.SwaggerUI.dll
+/Users/izabelawojciak/BenchProjects/dotnet/MovieHubClient/MovieHubClientMockChallenge/obj/Debug/net8.0/MovieHubClientMockChallenge.sourcelink.json
+/Users/izabelawojciak/BenchProjects/dotnet/MovieHubClient/MovieHubClientMockChallenge/bin/Debug/net8.0/AutoMapper.dll
+/Users/izabelawojciak/BenchProjects/dotnet/MovieHubClient/MovieHubClientMockChallenge/bin/Debug/net8.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll

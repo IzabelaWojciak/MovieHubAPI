@@ -1,6 +1,6 @@
 using MovieHubClientMockChallenge.Entities;
 
-namespace MovieHubClientMockChallenge.Services;
+namespace MovieHubClientMockChallenge.Repositories;
 
 public interface IMovieRepository
 {
@@ -8,4 +8,6 @@ public interface IMovieRepository
         string? title, 
         string? genre
     );
+    
+    Task<Movie?> GetMovieAsync(int id);
 }

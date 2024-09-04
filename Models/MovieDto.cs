@@ -10,5 +10,5 @@ public class MovieDto
     public string Synopsis { get; set; } = string.Empty;
     public string Director { get; set; } = string.Empty;
     public string Rating { get; set; } = string.Empty;
-    public string PrincessTheatreMovieId { get; set; } = string.Empty;
+    public ICollection<CinemaDto> Cinemas { get; set; } = new List<CinemaDto>();
 }

@@ -1,7 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using MovieHubClientMockChallenge.DBContexts;
 using MovieHubClientMockChallenge.Entities;
-using MovieHubClientMockChallenge.Services;
 
 namespace MovieHubClientMockChallenge.Repositories;
 
@@ -29,5 +28,14 @@ public class MovieRepository(MovieHubContext context) : IMovieRepository
         }
 
         return await movies.ToListAsync();
+    }
+    
+    public async Task<Movie?> GetMovieAsync(int movieId)
+    {
+        return await _context.Movies
+            .Include(m => m.MovieCinemas)
+            .ThenInclude(mc => mc.Cinema)
+            .Where(m => m.Id == movieId)
+            .FirstOrDefaultAsync();
     }
 }
