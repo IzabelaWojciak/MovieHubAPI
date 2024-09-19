@@ -21,6 +21,7 @@ builder.Services.AddDbContext<MovieHubContext>(options => options.UseSqlite("Nam
 builder.Services.AddScoped<IMovieRepository, MovieRepository>();
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 builder.Services.AddScoped<MovieService>();
+builder.Services.AddScoped<ReviewService>();
 
 var app = builder.Build();
 

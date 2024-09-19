@@ -1,5 +1,4 @@
 using AutoMapper;
-using Microsoft.AspNetCore.Mvc;
 using MovieHubClientMockChallenge.Models;
 using MovieHubClientMockChallenge.Repositories;
 
@@ -16,12 +15,24 @@ public class MovieService(IMovieRepository movieRepository, IMapper mapper)
     )
     {
         var movieEntities = await _movieRepository.GetMoviesAsync(title, genre);
-        return _mapper.Map<IEnumerable<MovieDto>>(movieEntities);
+        var movies = _mapper.Map<IEnumerable<MovieDto>>(movieEntities).ToList();
+    
+        var tasks = movies.Select(async movieDto =>
+        {
+            movieDto.AverageScore = await _movieRepository.GetAverageScore(movieDto.Id);
+            return movieDto;
+        });
+    
+        await Task.WhenAll(tasks);
+        return movies;
     }
 
     public async Task<MovieDto> GetMovieById(int movieId)
     {
         var movieEntity = await _movieRepository.GetMovieAsync(movieId);
-        return _mapper.Map<MovieDto>(movieEntity);
+        var movieDto = _mapper.Map<MovieDto>(movieEntity);
+        movieDto.AverageScore = await _movieRepository.GetAverageScore(movieId);
+
+        return movieDto;
     }
 }

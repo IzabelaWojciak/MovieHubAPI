@@ -1,8 +1,4 @@
-using AutoMapper;
-using AutoMapper.Configuration.Conventions;
 using Microsoft.AspNetCore.Mvc;
-using MovieHubClientMockChallenge.Models;
-using MovieHubClientMockChallenge.Repositories;
 using MovieHubClientMockChallenge.Services;
 
 namespace MovieHubClientMockChallenge.Controllers;

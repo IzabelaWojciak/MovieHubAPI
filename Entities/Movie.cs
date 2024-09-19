@@ -51,4 +51,5 @@ public class Movie(
     public string Rating { get; init; } = rating;
 
     public ICollection<MovieCinema> MovieCinemas { get; init; } = new List<MovieCinema>();
+    public ICollection<MovieReview> MovieReviews{ get; init; } = new List<MovieReview>();
 }
