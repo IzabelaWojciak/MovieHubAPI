@@ -11,7 +11,8 @@ public class Movie(
     int runtime,
     string synopsis,
     string director,
-    string rating)
+    string rating,
+    string princessTheatreMovieId)
 {
     [Key]
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -49,6 +50,11 @@ public class Movie(
     [MaxLength(8)]
     [Column("rating")]
     public string Rating { get; init; } = rating;
+    
+    [Required]
+    [MaxLength(16)]
+    [Column("princessTheatreMovieId")]
+    public string PrincessTheatreMovieId { get; init; } = princessTheatreMovieId;
 
     public ICollection<MovieCinema> MovieCinemas { get; init; } = new List<MovieCinema>();
     public ICollection<MovieReview> MovieReviews{ get; init; } = new List<MovieReview>();

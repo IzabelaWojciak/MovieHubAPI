@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MovieHubClientMockChallenge")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d2a947b13b225bff64d318b016a063d89e2ef7a8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f6d9b6c9f82938e074896ffdf46456293b67a8ec")]
 [assembly: System.Reflection.AssemblyProductAttribute("MovieHubClientMockChallenge")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MovieHubClientMockChallenge")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -22,6 +22,8 @@ builder.Services.AddScoped<IMovieRepository, MovieRepository>();
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 builder.Services.AddScoped<MovieService>();
 builder.Services.AddScoped<ReviewService>();
+builder.Services.AddScoped<PrincessTheatreService>();
+builder.Services.AddScoped<HttpService>();
 
 var app = builder.Build();
 
